@@ -32,17 +32,19 @@ const checkNameSubmission = (name) => {
     // If name has been guessed already!
     if (checkGuesses(name)) {
         // Fail message Guessed already!
-        console.log("Guessed already!")
         rank = checkTopKRank(name)
         status = 'guessed-before'
         visible = true
+        console.log(name.toUpperCase(), ": Guessed already!")
+        console.log("Rank: ", rank == 1101 ? 'Not ranked' : rank)
         return
     }
     // If the name doesn't exist
     else if (mName.length == 0 && fName.length == 0) {
         // Fail message
         rank = checkTopKRank(name)
-        console.log("Name not found")
+        console.log(name.toUpperCase(), ": Name not found")
+        console.log("Rank: ", rank == 1101 ? 'Not ranked' : rank)
         status = 'fail'
         visible = true
         // Add name to guess list
@@ -50,7 +52,8 @@ const checkNameSubmission = (name) => {
     } else {
         rank = mName.length == 0 ? fName[0].rank : mName[0].rank
         // Success message
-        console.log("Name found")
+        console.log(name.toUpperCase(),": Name found")
+        console.log("Rank: ", rank)
         status = 'success'
         visible = true
         // Add name to guess list
