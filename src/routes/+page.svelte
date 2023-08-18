@@ -79,7 +79,7 @@ const storeGuess = (name, correct) => {
 
 <!-- Style -->
 <style global lang="scss">
-@import 'sanitize.css';
+// @import 'sanitize.css';
 
 .main {
     position: relative;
